@@ -1,0 +1,20 @@
+{% extends 'needs/layout.html' %}
+
+{% load static %}
+
+{% block title %}Needs{% endblock %}
+
+{% block body %}
+    <h1>Needs</h1>
+
+    {% include 'needs/add-need-form.html' %}
+    {% include 'needs/add-action-form.html' %}
+
+    <div id="need-container">
+        {% for need in needs %}
+            {% include 'needs/need-card.html' %}
+        {% endfor %}
+    </div>
+
+    <script src="{% static 'needs/needs.js' %}"></script>
+{% endblock %}

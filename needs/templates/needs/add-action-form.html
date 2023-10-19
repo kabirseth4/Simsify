@@ -1,0 +1,35 @@
+<div id="add-action-form" class="card mb-3">
+    <div class="card-body">
+        <form action="{% url 'add_action' %}" method="post">
+            <input class="form-control form-control-lg mb-2" type="text" name="action-name" placeholder="New action name" aria-label="Name of new action" required>
+            <div class="mb-2">
+                <label class="form-label">Related need</label>
+                <div>
+                    <select class="form-select" id="related-need-select" name="related-need" required>
+                        <option value="" disabled selected hidden>Select a need</option>
+                        {% for need in needs %}
+                            <option value="{{ need.id }}">{{ need.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-text">
+                    Select which need your action will affect.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Need impact</label>
+                <div class="input-group" id="need-impact-input">
+                    <input type="number" class="form-control" name="need-impact" min="0" max="100" aria-label="Need impact as percentage" required>
+                    <span class="input-group-text">%</span>
+                </div>
+                <div class="form-text">
+                    Choose how much the related need will be increased by this action. A negative need will be decreased.
+                </div>
+            </div>
+            <div id="add-action-buttons">
+                <button id="cancel-add-action-btn" type="button" class="btn btn-outline-danger">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

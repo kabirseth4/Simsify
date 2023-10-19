@@ -1,0 +1,45 @@
+<div id="add-need-form" class="card mb-3">
+    <div class="card-body">
+        <form action="{% url 'add_need' %}" method="post">
+            <input class="form-control form-control-lg mb-2" type="text" name="need-name" placeholder="New need name" aria-label="Name of new need" required>
+            <div class="mb-2">
+                <label class="form-label">Need type:</label>
+                <div>
+                    <input type="radio" class="btn-check" name="need-type" id="normal-need-btn" value="normal" checked>
+                    <label class="btn btn-outline-secondary" for="normal-need-btn">Normal</label>
+                    <input type="radio" class="btn-check" name="need-type" id="negative-need-btn" value="negative">
+                    <label class="btn btn-outline-secondary" for="negative-need-btn">Negative</label>
+                </div>
+                <div id="normal-need-text" class="form-text">
+                    Normal needs <strong>decrease</strong> over time and <strong>increase</strong> when actions are enacted.
+                </div>
+                <div id="negative-need-text" class="form-text">
+                    Negative needs <strong>increase</strong> over time and <strong>decrease</strong> when actions are enacted.
+                </div>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Decay speed:</label>
+                <div id="decay-time-input" class="input-group">
+                    <input type="text" class="form-control" name="decay-time-value" aria-label="Need decay speed" required>
+                    <select class="form-select" id="decay-time-unit" name="decay-time-unit">
+                        <option value="1">minute(s)</option>
+                        <option value="60" selected>hour(s)</option>
+                        <option value="1440">day(s)</option>
+                        <option value="10080">week(s)</option>
+                        <option value="43830">month(s)</option>
+                    </select>
+                </div>
+                <div id="normal-decay-text" class="form-text">
+                    Choose how long it takes for your need to go from <strong>empty</strong> to <strong>full</strong>. The maximum value is 12 months.
+                </div>
+                <div id="negative-decay-text" class="form-text">
+                    Choose how long it takes for your need to go from <strong>full</strong> to <strong>empty</strong>. The maximum value is 12 months.
+                </div>
+            </div>
+            <div id="add-need-buttons">
+                <button id="cancel-add-need-btn" type="button" class="btn btn-outline-danger">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

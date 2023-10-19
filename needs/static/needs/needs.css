@@ -1,0 +1,87 @@
+.body {
+    padding: 16px;
+}
+
+.navbar {
+    padding-left: 16px;
+    padding-right: 8px;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+#decay-time-input {
+    max-width: fit-content;
+}
+
+#decay-time-unit {
+    max-width: fit-content;
+}
+
+#need-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.need-card {
+    width: 50%;
+}
+
+#add-need-form,
+#add-action-form {
+    display: none;
+}
+
+#negative-need-text,
+#negative-decay-text {
+    display: none;
+}
+
+#add-need-buttons,
+#add-action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+#related-need-select {
+    max-width: fit-content;
+}
+
+#need-impact-input {
+    max-width: 10em;
+}
+
+.need-card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.need-card-title {
+    width: fit-content;
+}
+
+.delete-need-btn {
+    display: none;
+    padding: 0 12px;
+}
+
+.login-card {
+    max-width: 600px;
+    margin: auto;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu>li:hover>.dropdown-submenu {
+    display: block;
+}

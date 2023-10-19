@@ -1,0 +1,11 @@
+<div class="card need-card" data-id="{{ need.id }}" data-max-level="{{ need.max_level }}" data-current-level="{{ need.get_level }}" data-negative-need="{{ need.negative_need }}">
+    <div class="card-body">
+        <div class="need-card-header mb-2">
+            <h3 class="card-title need-card-title">{{ need.name }}</h3>
+            <button type="button" class="btn btn-danger delete-need-btn">Delete</button>
+        </div>
+        <div class="progress" role="progressbar" aria-label="{{ need.name }}" aria-valuenow="{{ need.get_level }}" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: {{ need.get_level }}%"></div>
+        </div>
+    </div>
+</div>
